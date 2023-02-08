@@ -1,0 +1,9 @@
+<Context>
+    <Resource name="jdbc/redthat"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              type="javax.sql.DataSource"
+              username="root"
+              password="JebZadmina"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/redthat?serverTimezone=UTC"/>
+</Context>
