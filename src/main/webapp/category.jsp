@@ -1,11 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>RedThat</title>
+    <title>${requestScope.category.name} - ReadStack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main.css">
@@ -13,26 +13,20 @@
 <body>
 <div class="container">
     <nav class="navbar">
-        <a href="#" class="logo">
+        <a href="${pageContext.request.contextPath}" class="logo">
             <i class="fas fa-share-alt-square"></i>
-            RedThat
+            ReadStack
         </a>
-        <a href="#" class="login-button">Login</a>
+        <a href="#" class="login-button">Zaloguj</a>
     </nav>
 
-    <aside class="categories">
-        <ul>
-            <c:forEach var="category" items="${requestScope.categories}">
-                <li><a href="${pageContext.request.contextPath.contact('/category?id=').contact(category.id)}"><${category.name}</a></li>
-            </c:forEach>
-        </ul>
-    </aside>
-
     <main>
+        <h1>${requestScope.category.name}</h1>
+        <p>${requestScope.category.description}</p>
         <c:forEach var="discovery" items="${requestScope.discoveries}">
             <article class="discovery">
                 <h2 class="discovery-header"><c:out value="${discovery.title}"/></h2>
-                <p class="discovery-details">Added by: Joe, ${discovery.dateAdded.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))}</p>
+                <p class="discovery-details">Dodane przez: Mietek, ${discovery.dateAdded.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"))}</p>
                 <a href="<c:out value="${discovery.url}"/>" target="_blank" class="discovery-link"><c:out value="${discovery.url}"/></a>
                 <p><c:out value="${discovery.description}"/></p>
                 <section class="discovery-bar">
@@ -47,7 +41,7 @@
             </article>
         </c:forEach>
     </main>
-    <footer>RedThat ®, developed by ML</footer>
+    <footer>ReadStack ®, developed by JavaStart.pl</footer>
 </div>
 </body>
 </html>
