@@ -22,11 +22,13 @@ public class CategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         int categoryId = Integer.parseInt(request.getParameter("id"));
-        CategoryFullInfo categoryFullInfo = categoryService.findById(categoryId)
+        CategoryFullInfo category = categoryService.findById(categoryId)
                 .orElseThrow();
-        request.setAttribute("category",categoryFullInfo);
-        List<DiscoveryBasicInfo> discoveryBasicInfos =discoveryService.findByCategory(categoryId);
-        request.setAttribute("discoveries", discoveryBasicInfos);
+        request.setAttribute("category",category);
+        List<DiscoveryBasicInfo> discovery =discoveryService.findByCategory(categoryId);
+        request.setAttribute("discoveries", discovery);
         request.getRequestDispatcher("/category.jsp").forward(request, response);
     }
 }
+
+

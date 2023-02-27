@@ -24,7 +24,7 @@ public class CategoryDao {
         final String query = """
                 SELECT
                 id, name, description
-                FORM
+                FROM
                 category
                 """;
         try (Connection connection = dataSource.getConnection();

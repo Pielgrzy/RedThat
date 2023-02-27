@@ -23,7 +23,7 @@
     <aside class="categories">
         <ul>
             <c:forEach var="category" items="${requestScope.categories}">
-                <li><a href="${pageContext.request.contextPath.contact('/category?id=').contact(category.id)}"><${category.name}</a></li>
+                <li><a href="${pageContext.request.contextPath.concat('/category?id=').concat(category.id)}">${category.name}</a></li>
             </c:forEach>
         </ul>
     </aside>

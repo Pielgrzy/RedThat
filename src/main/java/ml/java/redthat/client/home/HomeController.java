@@ -27,5 +27,4 @@ public class HomeController extends HttpServlet {
         request.setAttribute("categories", categories);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
-
 }
