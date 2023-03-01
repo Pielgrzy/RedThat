@@ -20,14 +20,14 @@ public class CategoryController extends HttpServlet {
     private final DiscoveryService discoveryService = new DiscoveryService();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int categoryId = Integer.parseInt(request.getParameter("id"));
         CategoryFullInfo category = categoryService.findById(categoryId)
                 .orElseThrow();
-        request.setAttribute("category",category);
-        List<DiscoveryBasicInfo> discovery =discoveryService.findByCategory(categoryId);
+        request.setAttribute("category", category);
+        List<DiscoveryBasicInfo> discovery = discoveryService.findByCategory(categoryId);
         request.setAttribute("discoveries", discovery);
-        request.getRequestDispatcher("/category.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/category.jsp").forward(request, response);
     }
 }
 
