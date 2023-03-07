@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RedThat</title>
+    <title>redthat</title>
     <%@ include file="../segments/stylesheets.jspf" %>
 </head>
 <body>
