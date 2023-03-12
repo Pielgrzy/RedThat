@@ -13,7 +13,7 @@
 <div class="container">
     <%@ include file="../segments/header.jspf" %>
 
-    <form action="#" method="post" class="user-form">
+    <form action="j_security_check" method="post" class="user-form">
         <h2 class="user-form-title">Login to RedThat</h2>
         <input name="j_username" placeholder="User name" required>
         <input name="j_password" placeholder="Password" type="password" required>
