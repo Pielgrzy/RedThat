@@ -10,4 +10,8 @@
             <form-error-page>/WEB-INF/views/login.jsp</form-error-page>
         </form-login-config>
     </login-config>
+    <security-role>
+        <role-name>USER</role-name>
+    </security-role>
+
 </web-app>

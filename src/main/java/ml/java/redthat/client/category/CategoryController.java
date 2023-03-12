@@ -25,7 +25,7 @@ public class CategoryController extends HttpServlet {
         CategoryFullInfo category = categoryService.findById(categoryId)
                 .orElseThrow();
         request.setAttribute("category", category);
-        List<DiscoveryBasicInfo> discovery = discoveryService.findByCategory(categoryId);
+        List<DiscoveryBasicInfo> discovery = discoveryService.findAllByCategory(categoryId);
         request.setAttribute("discoveries", discovery);
         request.getRequestDispatcher("/WEB-INF/views/category.jsp").forward(request, response);
     }

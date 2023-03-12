@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <nav class="navbar">
     <a href="${pageContext.request.contextPath}" class="logo">
         <i class="fas fa-share-alt-square"></i>
-        RedThat
+       RedThat
     </a>
     <c:choose>
         <c:when test="${empty pageContext.request.userPrincipal}">
